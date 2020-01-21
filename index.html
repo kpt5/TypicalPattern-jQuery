@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery練習・実験</title>
+
+  <!-- Bootstrap -->
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+
+  <link rel="stylesheet" href="jQ_よく使パタン.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- bxSlider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+</head>
+
+<body>
+  <!-- 「トップへ戻る」ボタン（スクロールしたら右下に浮き上がって配置される） -->
+  <div class="floating">
+    <a href="#">トップへ</a>
+  </div>
+  <div class="floating2">
+    <a href="#">トップへ</a>
+  </div>
+<!-- <h2>AAA</h2> -->
+  <div class="bx_wrapper">
+    <ul id="slider">
+      <li><img src="./img/地球.jpg" alt="地球"></li>
+      <li><img src="./img/地球_2.jpg" alt="地球_2"></li>
+      <li><img src="./img/地球_半月.jpg" alt="地球_半月"></li>
+      <li><img src="./img/Earth_4K.jpg" alt="Earth_4K"></li>
+      <li><img src="./img/Spacewalking-Astronaut-Earth-From-Space-Desktop-Wallpaper-HD.jpg" alt="宇宙飛行士"></li>
+    </ul>
+  </div>
+  <h2>↑画面の高さいっぱいのスライドショー</h2>
+  <h2>↓スライド</h2>
+  <div class="slide_wrapper">
+    <h2 class="slide_title">にんじゃわんこの一年</h2>
+    <div class="change_btn_wrapper">
+      <div id="prev_btn">← 前へ</div>
+      <div id="next_btn">次へ →</div>
+    </div>
+    <ul class="slides">
+      <li class="slide active"><img src="./img/spring.jpg"></li>
+      <li class="slide"><img src="./img/rainy.jpg"></li>
+      <li class="slide"><img src="./img/summer.jpg"></li>
+      <li class="slide"><img src="./img/autumn.jpg"></li>
+      <li class="slide"><img src="./img/winter.jpg"></li>
+    </ul>
+    <div class="index_btn_wrapper">
+      <div class="index_btn">1</div>
+      <div class="index_btn">2</div>
+      <div class="index_btn">3</div>
+      <div class="index_btn">4</div>
+      <div class="index_btn">5</div>
+    </div>
+  </div>
+  <!-- アコーディオンメニュー -->
+  <header>
+    <div>
+      <dl id="acMenu">
+        <dt>アコーディオンメニュー1</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dt>アコーディオンメニュー2</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dt>アコーディオンメニュー3</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+      </dl>
+    </div>
+    <div>
+      <dl id="acMenu_2">
+        <dt>アコーディオンメニュー1</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dt>アコーディオンメニュー2</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dt>アコーディオンメニュー3</dt>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+        <dd>アコーディオンメニューが開く。</dd>
+      </dl>
+    </div>
+
+  </header>
+  <!-- モーダル：clickイベントなどに基づいて、表示/非表示が行われる要素 -->
+  <!-- ①モーダルをCSSで非表示にする -->
+  <!-- ②ログインボタンにclickイベントを設定 -->
+  <!-- ③clickイベントでモーダルを表示 -->
+  <div class="login_modal_wrapper" id="login_modal">
+    <div class="modal">
+      <div id="close_login_modal">
+        <!--        <i class="fa fa-2x fa-times"></i>-->
+        <b class="close_btn">X</b>
+      </div>
+      <div class="form">
+        <h2>Emailログイン</h2>
+        <form action="#">
+          <input type="text" placeholder="メールアドレス">
+          <input type="password" placeholder="パスワード">
+          <div id="login_submit_btn">ログイン</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <main>
+    <h1>jQuery練習・実験
+      <!--
+     <script type="text/javascript">
+      SpecificDay();
+    </script>
+-->
+    </h1>
+    <p>■paragraph■</p>
+    <div>
+      <h2>モーダルの表示・非表示</h2>
+      <div id="login_btn">ログイン</div>
+    </div>
+    <div>
+      <h2>hoverイベント</h2>
+      <div class="flex_container hover_p">
+        <div class="hover">
+          <p class="text_contents">１ーーー５ーーー０</p>
+        </div>
+        <div class="hover">
+          <p class="text_contents">１ーーー５ーーー０１２３４５６７８９０</p>
+        </div>
+        <div class="hover">
+          <p class="text_contents">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        </div>
+      </div>
+      <div class="flex_container hover_p">
+        <p class="text_contents">aaaaaaaa</p>
+        <p class="text_contents">aaaaaaaa</p>
+        <p class="text_contents">aaaaaaaa</p>
+      </div>
+    </div>
+    <h2>アコーディオン</h2>
+    <div>
+      <ul id="lists">
+        <li class="list_item">
+          <h3>Progateの公式キャラクターはなんですか？</h3>
+          <b>+</b>
+          <div class="answer">
+            <p>にんじゃわんこといいます。忍者の格好をしたわんこです。ネコではありません。</p>
+          </div>
+        </li>
+        <li class="list_item">
+          <h3>■h3■</h3>
+          <b>+</b>
+          <div class="answer">
+            <p>■paragraph■</p>
+          </div>
+        </li>
+        <li class="list_item">
+          <h3>■h3■</h3>
+          <b>+</b>
+          <div class="answer">
+            <p>■p■</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- フォーム連携 -->
+    <h2>フォーム連携</h2>
+    <div class="container">
+      <div class="section_title">
+        <h3>キャラクター総選挙</h3>
+      </div>
+      <div class="section_content">
+        <p class="call_to_action">好きなキャラクターをクリック！</p>
+        <div class="option_wrapper">
+          <div class="option_group">
+            <img src="img/progate_baby_wanko.png">
+            <div class="option_btn" data-option="1">1. ベイビーわんこ</div>
+          </div>
+          <div class="option_group">
+            <img src="img/progate_wanko.png">
+            <div class="option_btn" data-option="2">2. にんじゃわんこ</div>
+          </div>
+          <div class="option_group">
+            <img src="img/progate_hitsuji.png">
+            <div class="option_btn" data-option="3">3. ひつじ仙人</div>
+          </div>
+        </div>
+        <form id="form">
+          <div>
+            <div>キャラクター：</div>
+            <select id="select_form">
+              <option value="0">選択してください</option>
+              <option value="1">1. ベイビーわんこ</option>
+              <option value="2">2. にんじゃわんこ</option>
+              <option value="3">3. ひつじ仙人</option>
+            </select>
+          </div>
+          <div>
+            <div id="error_message"></div>
+            <div>理由：</div>
+            <textarea id="text_form"></textarea>
+          </div>
+          <button type="submit" class="btn btn_submit">送信</button>
+        </form>
+        <div>
+          <h4>結果</h4>
+          <div class="output_inner">
+            <p class="output_item">好きなキャラクター：<span id="output_select"></span></p>
+            <p class="output_item">理由：<span id="output_reason"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 入力フォーム連携 -->
+    <div>
+      <h2>入力フォーム連携</h2>
+      <div>
+        <!--      <form>-->
+        <label>表示文字列：
+          <input type="text" id="input_text" name="" value="表示文字列" placeholder="">
+        </label>
+        <p id="output_text"></p>
+        <!--      </form>-->
+      </div>
+      <div>
+        <form id="form_2">
+          <label>表示文字列2：
+            <input type="text" id="input_text_2" name="" value="表示文字列2" placeholder="">
+          </label>
+          <button type="submit" class="btn btn_submit">反映</button>
+          <!--          <button type="submit">反映</button>-->
+          <p id="output_text_2"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- 切り替え機能付きタブメニュー -->
+    <div>
+      <h2>切り替え機能付きタブメニュー</h2>
+      <ul id="tabMenu" class="clearfix">
+        <li><a href="#tabBox1">タブメニュー1</a></li>
+        <li><a href="#tabBox2">タブメニュー2</a></li>
+        <li><a href="#tabBox3">タブメニュー3</a></li>
+      </ul>
+      <div id="tabBoxes">
+        <div id="tabBox1">タブボックス1</div>
+        <div id="tabBox2">タブボックス2</div>
+        <div id="tabBox3">タブボックス3</div>
+      </div>
+    </div>
+    <!-- セレクトボックスで表示を切り替える -->
+    <div>
+      <!-- 表示・非表示が切り替える要素 -->
+      <ul>
+        <li class="area">北海道</li>
+        <li class="area">東京</li>
+        <li class="area">大阪</li>
+        <li class="area">兵庫</li>
+        <li class="area">京都</li>
+      </ul>
+
+      <!-- 絞り込むためのトリガー -->
+      <select class="select">
+        <option>全て</option>
+        <option>北海道</option>
+        <option>東京</option>
+        <option>大阪</option>
+        <option>兵庫</option>
+        <option>京都</option>
+      </select>
+    </div>
+    <!-- セレクトボックスで表示を切り替える・改 -->
+    <div>
+      <!-- 表示・非表示が切り替える要素 -->
+      <ul>
+        <li class="area2">北海道</li>
+        <li class="area2">東京</li>
+        <li class="area2">大阪</li>
+        <li class="area2">兵庫</li>
+        <li class="area2">京都</li>
+      </ul>
+
+      <!-- 絞り込むためのトリガー -->
+      <select class="select2">
+        <option>全て</option>
+        <option>北海道</option>
+        <option>東京</option>
+        <option>大阪</option>
+        <option>兵庫</option>
+        <option>京都</option>
+      </select>
+    </div>
+
+    <div></div>
+    <!-- 切り替え機能付きスライド -->
+    <!-- 
+「.slide」要素は「display: none;」を用いて一旦すべて表示されないようにし、activeクラスがついた「.slide」要素だけが表示されるようにします。
+このactiveクラスをjQueryによって付け替えることによって、表示されるスライドを変更していきます。
+ 「active」クラスがついた要素のインデックス番号を取得
+ clickイベントの中で、クリックされた要素のインデックス番号を取得
+ $(this)にはクリックした要素が入っています。それをindexメソッドの引数に指定することで、クリックした要素のインデックス番号を取得する
+  -->
+    <div>
+
+    </div>
+  </main>
+  <!--  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+  <!-- bxSlider -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <!--
+  <script>
+    $(document).ready(function() {
+      //      $('#slider').bxSlider();
+      $('#slider').bxSlider({
+        mode: 'fade',   //スライドモードの指定・デフォルトは'horizontal'(水平移動)
+        //                      vertical：縦方向のスライド・fade：フェードでの切り替え
+        infiniteLoop: true, //スライドをループさせるかどうかの設定・初期値は「true」
+        speed: 1000, //スライドの速さを変更・デフォルトは500
+        pager: false, //ページャー（スライド下の「・・・」）を表示・デフォルトはtrue
+        controls: false, //コントロール（左右の矢印）を表示・デフォルトはtrue
+        nextText: '次へ', //「次へ」ボタンのテキストを指定・デフォルトは'Next'
+        prevText: '前へ', //「次へ」ボタンのテキストを指定・デフォルトは'Prev'
+        auto: true, //自動でスライド・デフォルトはfalse
+        pause: true, //自動でスライドする時の停止時間をミリ秒で指定・デフォルトは4000
+        slideWidth: 400, //各スライドの幅を指定。
+      });
+    });
+  </script>
+-->
+  <script src="jQ_よく使パタン.js" async></script>
+</body></html>

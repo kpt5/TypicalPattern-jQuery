@@ -1,0 +1,1259 @@
+@charset "UTF-8";
+
+/* ★初期設定★ */
+* {
+  box-sizing: border-box;
+  /*  border: 1px solid black;*/
+}
+
+/* ★フォントサイズ指定 */
+html {
+  font-size: 62.5%;
+}
+
+/* chromeブラウザのバグ対応のため、em指定。16px */
+body {
+  font-size: 1.6em;
+}
+
+h1 {
+  font-size: 30px;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+
+
+/* ★推奨フォント */
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+/*
+* {
+  margin: 0;
+  padding: 0;
+}
+*/
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ★初期設定・終★ */
+
+
+/* 「トップへ戻る」ボタン（スクロールしたら右下に浮き上がって配置される） */
+.floating {
+  display: none;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+}
+
+.floating a {
+  display: block;
+  padding: 8px;
+  background: #000;
+  opacity: 0.6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.floating a:hover {
+  opacity: 1;
+}
+
+/* 「トップへ戻る」ボタン（スクロールしたら右下に浮き上がって配置される）  改 */
+.floating2 {
+  display: none;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+}
+
+.floating2 a {
+  display: block;
+  padding: 8px;
+  background: #000;
+  opacity: 0.6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.floating2 a:hover {
+  opacity: 1;
+}
+
+/* アコーディオンメニュー */
+#acMenu dt {
+  display: inline-block;
+  width: 22rem;
+  height: 50px;
+  line-height: 50px;
+  border: #666 1px solid;
+  text-align: center;
+  cursor: pointer;
+}
+
+#acMenu dd {
+  display: none;
+  width: 27rem;
+  height: 50px;
+  line-height: 50px;
+  border: #666 1px solid;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+/* アコーディオンメニュー2 */
+#acMenu_2 dt {
+  display: block;
+  width: 185px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: #666 1px solid;
+  cursor: pointer;
+  background: url(images/i_swich.png) 177px -69px no-repeat;
+  padding-right: 15px;
+}
+
+#acMenu_2 dd {
+  background: #f2f2f2;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: #666 1px solid;
+  display: none;
+}
+
+#acMenu_2 dt.active {
+  background: url(images/i_swich.png) 177px 18px no-repeat;
+}
+
+
+/* モーダル */
+/* モーダルの背景 */
+.login_modal_wrapper {
+  display: none;
+  /* ブラウザ画面全体を隈なく覆って固定表示（下層にあるページは残りスクロールも効く） */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*  background-color: red;*/
+  /* 黒の半透明の背景 */
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+/* モーダル自身 */
+.modal {
+  margin: 150px auto;
+  /*
+  position: absolute;
+  top: 20%;
+  left: 34%;
+*/
+  /*
+  top: 50%;
+  left: 50%;
+  */
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 35%;
+  /*  width: 450px;*/
+  background-color: lightgray;
+  text-align: center;
+}
+
+/*
+.fa-times {
+  position: relative;
+  top: 0;
+  left: 185px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+*/
+
+.close_btn {
+  /*
+  float: right;
+  padding-right: 20px;
+*/
+  position: relative;
+  top: 0;
+  left: 185px;
+  font-size: 20px;
+  color: gray;
+  /*  color: rgba(128, 128, 128, 0.46);*/
+  cursor: pointer;
+}
+
+.form {
+  width: 100%;
+  /*  clear: both;  */
+  color: #5f5d60;
+}
+
+.form input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 12px 12px;
+  /*  width: 320px;*/
+  width: 70%;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+#login_submit_btn {
+  margin: 10px auto;
+  border: none;
+  border-radius: 3px;
+  padding: 14px 0;
+  width: 72%;
+  background-color: #5dca88;
+  color: white;
+  cursor: pointer;
+}
+
+/* ログインボタン */
+#login_btn {
+  border-radius: 3px;
+  width: 20%;
+  line-height: 65px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#login_btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flex_container {
+  /*  dislay: flex;*/
+  display: flex;
+}
+
+.hover_p {
+  justify-content: center;
+}
+
+.hover {
+  margin: 20px 40px;
+  width: 20%;
+  height: 30px;
+  background-color: green;
+}
+
+.text_contents {
+  display: none;
+  margin: 40px 0;
+  width: 20%;
+  text-align: center;
+}
+
+.text_active {
+  display: block;
+}
+
+/* アコーディオン */
+#lists {
+  margin: 0 auto;
+  width: 500px;
+  /*  padding: 0;*/
+  list-style: none;
+}
+
+.list_item {
+  position: relative;
+  /*  margin: 10px;*/
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  text-align: left;
+}
+
+.list_item h3 {
+  font-size: 14px;
+}
+
+.list_item b {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.answer {
+  display: none;
+  margin-bottom: 15px;
+  /* padding上下に0以外を入れないと変な動きになる */
+  padding: 1px 0px;
+  font-size: 12px;
+}
+
+/* 画面の高さいっぱいのスライドショー */
+.bx_wrapper {
+/*
+  margin: 0 auto;
+  width: 50%;
+*/
+/*
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+*/
+}
+
+.bx_wrapper img {
+  margin: 0 auto;
+}
+  
+/* スライド */
+ul {
+  /*  list-style: none;*/
+}
+
+.slide_wrapper {
+  margin: 0 auto;
+  width: 1000px;
+  color: gray;
+  text-align: center;
+}
+
+.slide_title {
+  font-size: 40px;
+}
+
+.change_btn_wrapper {
+  margin: auto;
+  width: 500px;
+  font-size: 18px;
+}
+
+.change_btn_wrapper::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+#prev_btn {
+  display: none;
+  float: left;
+  cursor: pointer;
+}
+
+#next_btn {
+  float: right;
+  cursor: pointer;
+}
+
+.slides {
+  padding-left: 0;
+}
+
+.slide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.slide img {
+  width: 500px;
+  /*  height: auto;*/
+  border-radius: 5px;
+}
+
+.index_btn_wrapper {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.index_btn {
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 3px;
+  padding: 6px 0;
+  width: 40px;
+  background-color: lightcyan;
+
+  color: darkcyan;
+  cursor: pointer;
+}
+
+.index_btn:hover {
+  background-color: darkcyan;
+  color: white;
+}
+
+
+/* フォーム連携 */
+/* 副題両脇の横線 */
+.section_title h3::before,
+.section_title h3::after {
+  display: inline-block;
+  margin: 0 2rem;
+  width: 40px;
+  height: 1px;
+  background-color: #616161;
+  content: "";
+  vertical-align: middle;
+}
+
+.container {
+  margin: 0 auto;
+  width: 700px;
+  color: #888;
+}
+
+.section_title {
+  color: #555;
+  /*  padding: 50px 0 10px;*/
+  text-align: center;
+}
+
+.section_title h3 {
+  /*  margin: 10px 0;*/
+  font-size: 32px;
+  /*  font-weight: 300;*/
+  /*  line-height: 36px;*/
+}
+
+.call_to_action {
+  text-align: center;
+  font-size: 18px;
+}
+
+.option_wrapper {
+  text-align: center;
+  /*  margin-bottom: 15px;*/
+}
+
+.option_group {
+  display: inline-block;
+  margin: 0 10px 25px;
+}
+
+.option_group img {
+  width: 120px;
+  /*  height: auto;*/
+}
+
+.option_btn {
+  margin-top: 10px;
+  padding: 12px 0;
+  width: 154px;
+  border-radius: 3px;
+  box-shadow: 0px 4px #279C56;
+  background-color: mediumseagreen;
+  /*  background-color: #5dca88;*/
+  /*  color: #fff;*/
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.option_btn:active {
+  position: relative;
+  top: 2px;
+  box-shadow: none;
+}
+
+#select_form,
+#text_form {
+  margin: 0;
+  padding: 15px;
+  border: none;
+  /*  box-shadow: none;*/
+  background: rgba(0, 0, 0, 0.08);
+  /*  background: lightgray;*/
+  /*  color: #202020;*/
+  color: black;
+  font-size: 16px;
+  /*  font-weight: 300;*/
+  font-family: 'Open Sans', sans-serif;
+  /*  transition: all .3s;*/
+}
+
+#error_message {
+  /*  color: #F51414;*/
+  margin-top: 10px;
+  color: red;
+  /*  height: 20px;*/
+}
+
+#text_form {
+  width: 100%;
+  /*  height: 75px;*/
+}
+
+.btn_submit {
+  padding: 12px 26px;
+  /*  border: 1px solid #5979ff;*/
+  box-shadow: inset 0 1px 0 #5867ed;
+  background: #5983ff;
+  color: white;
+  /*  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);*/
+  /*  font-family: 'Dosis', sans-serif;*/
+  font-size: 20px;
+  font-weight: 600;
+  transition: all .6s;
+}
+
+.output_inner {
+  margin-bottom: 60px;
+  border: 2px dotted;
+  border-radius: 3px;
+  padding: 14px 20px;
+  /*  width: 100%;*/
+}
+
+.output_item {
+  /*  margin: 8px 0px;*/
+  font-size: 18px;
+}
+
+
+/* タブメニュー */
+#tabMenu ul {
+  width: 600px;
+}
+
+#tabMenu li {
+  float: left;
+}
+
+#tabMenu li a {
+  display: block;
+  width: 198px;
+  height: 48px;
+  line-height: 50px;
+  text-align: center;
+  border: #ccc 1px solid;
+}
+
+#tabBox1,
+#tabBox2,
+#tabBox3 {
+  width: 598px;
+  height: 300px;
+  border: #ccc 1px solid;
+}
+
+#tabBox1 {
+  background: #FCF;
+}
+
+#tabBox2 {
+  background: #FFC;
+  display: none;
+}
+
+#tabBox3 {
+  background: gray;
+  display: none;
+}
+
+/* セレクトボックスで表示を切り替える */
+.hide {
+  /* 表示の切り替えに使用する */
+  display: none;
+}
+
+
+
+/* 以下備忘録（消す） */
+/* ◆逆引き */
+/* ◆レイアウト */
+/* ◆横並び */
+/*
+display: flex;  最重要
+display: inline-block;
+display: table-cell;
+float: left;
+display: grid;
+横並びでは、画像と見出しとちょっとした文が1つのまとまりになっているもの（カード）を並べることが多い
+
+*/
+
+/* ■CSSセレクタ */
+/*
+■セレクタの優先度
+記載する順番
+#id　→　.class　→　ul　→　*
+
+全称セレクタ（ユニバーサルセレクタ）：　*（アスタリスク）
+  全ての要素を対象
+要素セレクタ（タイプセレクタ）：要素名
+classセレクタ：　.（ドット）class名
+  idは一度しか使えませんでしたが、classは何度でも使うことができます。
+  cf.要素にスペースなしで連結して要素と組み合わせ指定も可。
+idセレクタ：　#（シャープ）id名
+  同じWebページ内では同じid名は1度しか使えませので注意が必要です。
+  ページが違えば使用することはできます。
+  idを使うのは、1ページに1つしか存在しないheader・footer・global-naviなど
+複数セレクタ：　selector , selector
+  複数の要素に同じ装飾が適用されます。
+子セレクタの指定：　親selector > 子selector
+  親selector > （直下の）子selectorのペア全てが対象となり、
+  親selector（直下の）子selectorにのみ装飾が適用されます。
+配下（子孫）セレクタの指定：　親selector （半角スペース）配下selector
+  親selector配下の全ての指定selectorに装飾が適用されます。
+  【注意】階層が深くなってもすべてに適用
+同階層・直後（隣接）セレクタの指定：　同階層selector + 同階層・直後selector
+  同階層（兄弟セレクタ）でかつ、直後にあるセレクタにのみスタイルを適用します。
+  「+」を連続して使用（++）することで、隣の隣までスタイルを適用させることができます。（不可）
+同階層・指定セレクタ：　同階層selector ~ 同階層・指定selector
+  同階層（兄弟セレクタ）の指定されたセレクタ全てにスタイルを適用します。
+
+*/
+
+/* ベンダープレフィックス */
+/*
+ベンダープレフィックス：各ブラウザごとの草案段階の先行実装や、独自拡張機能であることを判別するための識別子
+プロパティの頭に「-moz-」などのブラウザの種類を特定する識別子をつけ、「これが拡張機能である」ということを明記する。正式に実装されれば不要なのですが、それまではつけておく必要があります。
+ベンダープレフィックスの種類
+-ms-    Internet Explorer
+-webkit-  Google Chrome、Safari
+-moz-   Firefox
+-o-   FirOperafox
+*/
+
+/* ■疑似要素（::コロン2つ） */
+/*
+疑似要素（pseudo-element：偽りの要素）とは、要素内の特定した部分に対してスタイルを適用すること
+セレクタ::before　指定した要素の前に指定した内容を追加する
+セレクタ::after　指定した要素の後に指定した内容を追加する
+セレクタ::first-letter　最初の1文字だけにスタイルを適用する
+セレクタ::first-line　最初の行だけにスタイルを適用する
+セレクタ::selection　テキストが選択されたときスタイルを適用する
+
+:before疑似要素と:after疑似要素でよく使われるのが「content」プロパティを用いた方法です。対象となる要素の前後に指定した内容（文字列や画像、URLなど）を追加することができます。
+contentプロパティを適用することができるのは、:before擬似要素および:after擬似要素のみ。
+content: "文字列"
+content: url("../images/■■■.gif") 
+
+*/
+
+/* ■疑似クラス（:コロン１つ） */
+/*
+疑似クラスとは、要素が特定の状態にある場合にスタイルを指定するもの
+
+セレクタ:link　未訪問のリンクにスタイルを適用する
+セレクタ:visited　訪問済みのリンクにスタイルを適用する
+セレクタ:hover　リンクの上にマウスがあるときにスタイルを適用する
+セレクタ:active　クリック開始からクリック終了までの間だけスタイルを適用する
+セレクタ:focus　要素がフォーカスされた時にスタイルを適用する。主にフォームのスタイルに使用されます。
+セレクタ:nth-child()　子要素（n番目）を指定してスタイルを適用する
+  主に「li（リストタグ）」と併用されることが多い。
+  ()内にeven（偶数）、odd（奇数）、項目の順番、計算式などを指定してスタイルを適用させる
+セレクタ:first-child　指定した要素内で最初の子要素にスタイルを適用する
+  これを用いてグローバルメニューのような表示をつくることができます。
+セレクタ:last-child　指定した要素内で最後の子要素にスタイルを適用する
+セレクタ:only-child　親要素内で子要素が1つだけの場合のみ、スタイルを適用する
+
+※以下の4つの疑似クラスには記載する順番が決められています。
+:link　→　:visited　→　:hover　→　:active
+この順番通りに記載しないと、スタイルが適用されないので注意が必要。
+
+否定疑似クラス：指定した要素以外にスタイルが適用されます。
+:not(セレクタ) {}
+
+*/
+
+/* ■大きさの指定方法 */
+/*
+px指定：ピクセル単位の値を指定する。 表示はディスプレイの解像度に依存する。
+%指定：親要素に対する相対値を指定する。親要素にサイズ指定がない場合、ブラウザ標準サイズからの相対比となる。%指定は親要素の影響により同じ要素でも文字サイズが異なる結果となる。font-sizeは一般的に%指定を中心に利用したほうが良い
+キーワード指定：7つのキーワードによる絶対値を指定する。mediumが標準サイズとなる。
+  例) xx-small、x-small、small、medium、large、x-large、xx-large
+ビューポート・パーセンテージ（Viewport Units）：ビューポート＝デバイスの表示領域（仮想ウィンドウサイズ）を基準にした相対単位。ブラウザのサイズが変更されるたびに値が変化する動的な値になります。
+vw	Viewport Width	ビューポートの（ブラウザのスクロールバーを含んだ）幅に対する割合。1vw = ビューポートの幅の 1/100
+100vw は、html と body より大きいサイズ。ビューポートの幅はブラウザのスクロールバーを含んだサイズになるため、要素をウィンドウ幅いっぱいにする場合は、ビューポートで幅を指定するより、パーセントを使用する方が良い。
+vh	Viewport Height	ビューポートの高さに対する割合。1vh = ビューポートの高さの 1/100
+height: 100vh;で要素をページの高さいっぱいにすることができる（フルスクリーンの背景画像の設定で用いる）
+vmin	Viewport Minimum	ビューポートの幅か高さの小さい方に対する割合。1vmin = ビューポートの幅か高さの小さいほうの 1/100
+vmax	Viewport Maximum	ビューポートの幅か高さの長い方に対する割合。1vmax = ビューポートの幅か高さの大きいほうの 1/100
+*/
+
+/* ■色の指定方法 */
+/*
+カラーネーム
+#rrggbb　：red・green・blueの色をそれぞれ00～ffの2桁の16進数で表す。
+rgb(値, 値, 値)　：R(赤)、G(緑)、B(青)の色をそれぞれ0～255の10進数で表す。
+rgba(0,128,0,0.5);  RGBA値。RGBカラーモデルに、色の透明度Alphaが加わったもの。 透明度は、0（完全に透明）～1（完全に不透明）の数値で指定。
+hsl(0, 100%, 50%);  HSL色空間とは、色相（Hue）、彩度（Saturation）、輝度（Lightness）の３つの成分からなる色空間。色相を0〜360度の範囲で、彩度を純色から灰色の範囲で、輝度を白から黒の範囲で表す。RGB に対する HSL の利点は、より直感的であることです。ある程度、色を推測可能であり、微調整ができます。同一色相配色を作るのも簡単で、色相（hue）を同じにして彩度（saturation）と輝度（lightness）を変化させます。例は純色の赤。
+Hue（色相）
+0〜359の数値で指定（単位はつけません）。色相はカラーサークルの角度。定義により red=0=360 ： green=120, blue=240 など（角度であるため、-120=240 や 480=120 のように暗黙のうちに変換される。）。色相環の正反対に位置（+ 180）する色は「補色」と言って、お互いの色を引き立て合う性質があります。
+Saturation（彩度）：0%～100%で指定します。0%は灰色で、100%に向かって純色になっていきます。
+Lightness（輝度）：0%～100%で指定します。0%は黒、100%は白となり、純色を表現したい場合は50%を指定します。
+hsla(120, 100%, 50%, 0.5);  HSLA は、HSL 色モデルに "Alpha"（透明度）を追加して色の透明度を指定できるようにしたもの。0 = 透明（transparent）～1 = 不透明（opaque）。例は半透明の緑
+
+●カラーネーム（仮配色用）
+red
+pink
+gold
+lime
+blue
+black
+white
+green
+
+tomato
+navy
+gray
+cyan
+yellow
+orange
+silver
+violet
+magenta
+purple
+olive
+chocolate
+brown
+
+透明度
+opacity: 0.5;  透明度を、0.0（完全に透明）～1.0（完全に不透明）の数値で指定（初期値は1）。1未満の数値を指定した際には、透明効果が対象の要素全体に均一に適用されます（子要素にも opacity が適用される）。
+透明効果を要素全体ではなく、個別に適用したい場合には、rgba()  や hsla() で指定する
+*/
+
+/* ■よく使われるプロパティ */
+/* ■フォント */
+/*
+フォントサイズ
+font-size: 20px;  px絶対指定。絶対値（absolute）
+  CSS指定がなかった際はほとんどのブラウザで標準サイズの16px（=12pt）が適用させる
+  iOSのガイドラインを読むと最低サイズは11pt（14.6px）
+  表示はディスプレイの解像度に依存する。
+  画面サイズや解像度が全く違うデバイスを使う現代では、サイトの文字サイズをpxで固定する事はデメリットしかありません。
+emは親要素のfont-sizeが基準とした倍数。em相対指定。相対値（relative）。一番大枠であるボディタグのフォントサイズを10pxにすることでem指定を使いやすくします。emや%で指定した要素はそれらで囲めば囲むほど文字が大きくなってしまう
+  boby{font-size: 62.5%; }　＝10px
+  .sample1{ font-size: 1.2em;}　＝12px
+  .sample2{ font-size: 2em;}　＝20px
+%（パーセント）での表示もemと同じでブラウザの解釈に依存する形で100%が16pxが基準になるため、一度bodyのフォントサイズを10pxに整える作業が必要
+  boby{font-size: 62.5%; }　＝10px
+  .sample1{ font-size: 120%;}　＝12px
+  .sample2{ font-size: 200%;}　＝20px
+★rem(レム)：常に<html>タグに指定されたフォントの大きさに対して、割合で指定します。1で<html>タグの指定と同じ、2で二倍の大きさになります。レスポンシブなサイトならrem
+vh(Viewport Height)	表示画面の高さを基準に、割合で指定します。1で高さの1%、2で2％になります。
+vw(Viewport Width)  表示画面の幅を基準に、割合で指定します。1で幅の1%、2で2％になります。
+vwを使うと、思いの外小さすぎたり大きすぎたりといった事になってしまう
+キーワード値には、「xx-small、x-small、small、medium、large、x-large、xx-large 」などがあります。設定されている文字サイズに対して、 約1.2倍ぐらいずつ変化していきます。ブラウザやフォントの種類でも異なる。キーワードはあまり実用的ではない
+vw、rem、calc()は現段階でモダンブラウザ以外ではサポートがちょっと微妙です。vwとcalc()はIE8やAndroid4.4未満は完全に対応していないよう
+IE8がremをサポートしていない
+
+★おすすめのフォントサイズ指定
+html { font-size : 62.5% ; }
+body { font-size: 1.6em; }  chromeブラウザのバグ対応のため、em指定。16px
+h1 { font-size: 4rem ; }　　40px
+h2 { font-size: 3.2rem ; }　　32px
+h3 { font-size: 2.8rem ; }　　28px
+p { font-size: 1.6rem ; }　　16px
+ほとんどのブラウザで、ルート要素のフォントサイズが16pxに設定されています。
+16pxに0.625を掛けると10pxとなるので、フォントサイズを「62.5%」と指定。これで計算が楽になる。
+body要素には、em指定でデフォルトのフォントサイズを指定。chromeブラウザでは、body要素にrem指定すると、bodyをルートとして解釈してしまうバグがあるため。
+rem未対応のブラウザのためにpxなども書いておく
+デバイスごとの文字サイズは、メディアクエリを使ってhtml要素のルートサイズを変えるだけで、html配下の全ての文字サイズを一括変更します。
+
+フォントの太さ
+font-weight: normal;  デフォルト
+font-weight: bold;
+font-weight: 100;  100〜900  
+※日本語フォントでは対応していないものが多いため実際はほぼ、boldのみの使用
+
+フォントのカラー
+color:#333;
+color:#333333;
+color:red;
+白バックの背景に真っ黒（#000000）はギラツキで文章が読みにくいこともあり、多くのWEBデザインの現場では白バックに対して黒よりも１つ明るいグレーである#333333を使用します。
+
+フォントの種類・字体
+font-family:"ヒラギノ角ゴ Pro W3", 
+"Hiragino Kaku Gothic Pro", 
+"メイリオ", Meiryo, Osaka, 
+"ＭＳ Ｐゴシック",
+"MS PGothic", 
+sans-serif;
+フォント名にスペースが含まれている場合はクォーテーション（ 'or" ）で囲みます。
+多くの場合、デザインの統一を図るためにbodyに適用させ、その他一部分に違うフォントを使う程度に留めます。
+ユーザーのOSに入っていないフォントは表示されない。ヒラギノはMacならば表示され、Windowsでは表示されません。Windowsでは３番目に書いてあるメイリオが適応されます。
+Macはヒラギノ角ゴ、Windowsはメイリオが入っていればトラブルは起きません。
+
+@font-faceはCSSでフォントを指定することができる規則です。 ユーザーのフォント環境に依存せず、意図通りのフォントでサイトを表示する際に使用します。
+
+font: italic normal bold 80%/150% "ＭＳ Ｐゴシック";
+font-size、line-height、font-familyは順番を守る必要がありますが、その他順番は自由
+フォントサイズとフォントの種類以外は省略可能
+「行の高さ（line-height）」を指定する場合は、「サイズ（font-size）」の後にスラッシュ（ / ）を入れ、その後に記述します。
+*/
+
+/* ■テキスト */
+/*
+テキストの並び・配置
+text-align: left;  左揃え（デフォルト）
+text-align: center;  中央揃え
+text-align: right;  右揃え
+marginは自身の要素を真ん中寄せにするのに対して、text-align:centerは文字や画像などの中身を中央揃えにします。
+
+テキストの行の高さ・行間
+line-height: 12px;  ピクセル指定
+line-height: 1.2em;  em指定　倍数  フォントサイズ * 1.2
+line-height: 120%;  %指定  フォントサイズ * 1.2
+line-height: 1.2;  実数指定  フォントサイズ * 1.2
+
+テキストに付く線
+text-decoration: none;  なし（デフォルト） aタグに対して多用されます。
+text-decoration: underline;  下線
+text-decoration: overline;  上線
+text-decoration: line-through;  打ち消し線
+text-decoration: blink;  点滅
+
+文字間隔
+letter-spacing: 10px;
+letter-spacing: 1em;
+letter-spacing: -2px;
+letter-spacing: -0.2em;
+文字の間隔はpxかemのどちらかを一般的に使用します。ブログなどの文章は読みやすさを重視するために、ブラウザのデフォルトに対して、letter-spacing:1px、0.1emなどで調整することがあります。
+
+テキストの影
+text-shadow: none;  テキストに影をつけない（初期値）
+text-shadow: 右方向の距離 下方向の距離 影のぼかし具合（省略可） 影の色（省略可）;
+text-shadow: 横オフセット 縦オフセット ブラー  色 ;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.5) , -5px -5px 1px red;
+長さの値には、pxやemやexなどの単位が利用できます。
+影のぼかし具合（ブラー）が指定されない場合はゼロ。値が大きいほど、ぼかしは大きくなり、影は広く薄くなります。
+,(カンマ)で区切ることによって複数の影を設定することができます。複数の影を指定すると３Dのように見える
+ボックスからはみだして影が表示されることがありますが、ボックスのサイズ自体が変わることはありません。
+text shadowを使用することで、縁取りを表現する事も可能
+「text-shadow　パターン　サンプル　コピペ　テキスト装飾」
+
+text-indent : -9999px;  要素内のテキストを非表示にする(遥か左へ移動)
+  overflow : hidden;  text-indentでテキストを非表示にした際のfirefox用の対応
+
+text-overflow:ellipsis;   指定した領域(文字数ではない)をオーバーしたときに省略記号「…」を付与するプロパティです。システムで出力するパンくずリストや記事の見出しが長くなった際に活用できそうです。従来までJavascriptで文字数を指定して省略符号を付けていた
+*/
+
+/* ■背景 */
+/*
+複数の背景は、各レイヤーをカンマで区切って指定
+
+背景色
+background-color: transparent;  透明（デフォルト）
+background-color: #000;  RGB値の指定
+background-color: rgba(255,0,0,0.5);  RGB値の指定＋透明度の設定
+bodyなどのサイト全体に適応させるときは、フォントが見えづらくなるため、フォントカラーも一緒に変更する
+
+背景画像
+background-image: url(./images/top.png);
+背景の元画像のサイズは1920pxがベスト
+
+背景画像のサイズ
+background-size: auto; 画像サイズが自動で検出される（初期値）。基本は元画像の大きさそのまま伸縮は一切なし。
+background-size: contain;  （包含する）画像を優先して最大化。いつでも画像全体が映るように、縦横比を維持したまま伸縮。縦か横のどちらかに大抵隙間が生まれる。
+background-size: cover;  （覆う）縦横隙間なしを優先して最大化。縦横比は保持して縦横隙間なしに背景画像を表示。大抵縦か横のどちらかの一部が欠ける。
+background-size: 200px auto;  片方だけ数値を指定して、比率は保持したいという時は以下のようにautoと組み合わせる
+background-size: 70% auto;  autoと組み合わせると比率を保持した状態で%指定。100％でピッタリと覆う（autoを入れない限り縦横比は変わる）また「何個リピートするか」を指定できます。
+WEBアプリのトップ画面では、coverを使って画面幅最大で画像を表示しているケースが多い
+よく使われることが多い「contain」「cover」
+background-sizeプロパティをbackgroundプロパティより前に書くと、background-sizeプロパティの記述が無効になってしまう
+省略されたbackground-sizeの指定は、自動的に初期値の「auto,auto」となるため、先に記述したbackground-sizeが「auto auto」で上書きされてしまう
+
+背景画像のリピートの仕方
+background-repeat: repeat;  背景画像をリピート表示（デフォルト）
+background-repeat: repeat-x;  背景画像を横方向のみリピート表示
+background-repeat: repeat-y;  背景画像を縦方向のみリピート表示
+background-repeat: no-repeat;  背景画像をリピートしない
+
+背景画像の位置
+background-position: 10px 10px;  上から10px 左から10pxの位置に表示
+background-position: 10% 10%;  上から10% 左から10%の位置に表示
+background-position: top;  上から0pxの位置に表示
+background-position: bottom;  下から0pxの位置に表示
+background-position: left;  左から0pxの位置に表示
+background-position: right;  右から0pxの位置に表示
+background-position: center;  中央（50%）の位置に表示 
+background-position: left top;  初期値は左上
+background-repeat: no-repeatと併用してよく使われます。
+
+背景画像の固定・移動
+background-attachment: scroll;  スクロールすると背景画像も移動。初期値
+background-attachment: fixed;  背景を固定（スクロールで動かない）
+2019現在もバグが残っているので、Android8.0やiOS11ではFixedが効かずに表示が崩れてしまいます。
+
+背景のCSS一括指定
+background: black url(.images/background.jpg) no-repeat center center / cover;
+WEBデザインの現場ではこちらの書き方の方が浸透しています。
+「background」でbackground-sizeもまとめて指定する場合は、background-positionの値を指定した後に「/」を入れる必要がある
+*/
+
+/* ■レイアウト */
+/*
+要素の外部余白
+margin: 10px  上下左右に外部余白10px
+margin: 10px 10px;  上下・左右に外部余白10px  
+margin: 10px 10px 10px;  上・左右・下に外部余白10px
+margin: 10px 10px 10px 10px;  上・左・下・右（時計回り）に外部余白10px
+margin-top: 10px;
+margin-bottom: 10px;
+margin-right: 10px;
+margin-left: 10px;
+margin: 0 auto;  要素の横の中央揃え
+  必ずwidthも併せて指定している必要があります。widthはデフォルト100%のため、設定していないと真ん中寄せしていても変化はありません。上下に対するautoは効かないため0になります。
+単位はpxの他にem・%などが使用可能
+各要素間でmarginで余白を設定している時、外部余白は足し算になるのではなくどちらか大きい方の余白が採用される
+
+
+要素の内部余白
+padding: marginと同様
+
+ボックスサイズの算出方法の指定
+枠線(border)や内部余白(padding)をwidthやheightに含めるかどうか
+box-sizing: content-box; 枠線「border」や内部余白「padding」を横幅と高さに含めない（初期値）
+box-sizing: border-box;  枠線「border」や内部余白「padding」を横幅と高さに含める。paddingとborderの分だけボックスサイズが小さくなります。
+
+幅指定
+width: 500px;
+width: 50%;
+スマートフォンの横幅が多くなってきたため、ピクセル指定だとレイアウトが崩れる
+%は親要素に対する割合（body直下のHTML要素の場合はブラウザサイズに対する割合）
+
+高さ指定
+height: 500px;
+height: 50%;
+heightの%利用は難しく、親要素の%を明示していないとうまく表示されない。
+
+枠線
+border: 10px solid #999;  上下左右に太さ10px・実線・色は#999（任意の順序・省略も可能）
+border-top【上辺の枠線】
+border-bottom【底辺の枠線】
+border-left【左辺の枠線】
+border-right【右辺の枠線】
+太さの指定
+  thin：細線。キーワードで指定する方法は、ほぼ使用することはありません。
+  medium：中太線（デフォルト）
+  thick：太線
+  px：ピクセル指定（太さの値はfont-sizeのように指定方法が複数ありますが、px指定が一般的）
+  em：要素に設定されたフォントのサイズを基準とする長さ。フォントサイズが変わるとそれに合わせた長さとなる。
+線の種類の指定
+  none：線表示なし（デフォルト）
+  solid：1本の実線。
+  dashed：破線
+  dotted：点線
+  double：2本の実線。
+  hidden：枠線を表示しない
+  groove：枠部分がへこんで見える
+  inset：内側部分がへこんで見える
+  outset内側部分が膨らんで見える
+  ridge：枠部分が膨らんで見える
+「border-color」、「border-style」、「border-width」でそれぞれ設定することもできます。
+ボーダーは太さや色だけを指定しても表示されない（←border-styleプロパティの初期値がnoneとなっているため）。ボーダーを表示させるには、太さや色だけでなく種類も同時に指定してやる必要があります。
+
+枠の丸さ
+borderで作った枠線の角を丸くする
+border-radius:50%;  ４つのコーナーを一括して指定。50%=角丸の半径で円になる
+border-radius: 10px 20px;   左上と右下・右上と左下
+border-radius: 10px 20px 5px;   左上・右上と左下・右下
+border-radius: 10px 20px 5px 30px;   左上・右上・右下・左下（時計回り）
+border-top-left-radius: 25%;  左上
+border-top-right-radius: 25%;   右上
+border-bottom-left-radius: 25%;   左下
+border-bottom-right-radius: 25%;  右下
+border-radius: 80px / 40px;  水平方向 / 垂直方向。角を楕円に。ラグビーボール
+border-radius はテーブルに適用することもできます。セル（td や th 要素）を角丸の罫線で囲むことができます。但し、table 要素の「border-collapse」の指定は「separate」にする必要があります。「collapse」を指定すると角は丸くなりません。
+
+要素の回り込み（浮動）
+float:left;  要素を左寄せ
+float:right;  要素を右寄せ
+floatを使って要素を左右に配置したら、その下にくる要素には「overflow; hidden;」や「clear: both;」などを記述して、指定要素以外の回り込みを解除しなければなりません。一般的によく使用されている方法は、親要素にclearfixを指定する方法
+「clearfix」を設定しない場合、高さを保つことができなくなる
+子要素の高さを揃えることができない（固定値にしない場合）
+横幅を均等に揃えることができない
+Floatは初心者には難易度が高く習得しにくい。レイアウトを崩す可能性もある
+ただ、新聞などでよくある要素への回り込みはFlexboxではできずFloatしかできません。
+
+
+要素の回り込み（浮動）解除
+clear:left;  左の回り込み解除
+clear:right;  右の回り込み解除
+clear:both;  両方の回り込み解除
+
+要素の表示形式の指定
+display:block;  改行あり。縦並び。
+display:inline;  改行なし。横並び。margin、width、height不可
+display:inline-block;  改行なし。横並び。margin、padding、width、heightを指定可。
+display:none;   要素が無かったことになる。その要素の後に他の要素があった場合、後の要素が前の要素のスペースを埋めてくる。アクセシビリティのために非表示にする場合は、display:noneや、visibility:hiddenを使用するのではなく、clipプロパティが一般的
+display:table;  display:table-cellを適用した要素の親要素に適用する。
+display:table-cell;   テーブルtableタグのtd要素のようにする。子要素を均等に横並び。横幅の可変に対応できます。スマホサイトのナビゲーションなどでよく使われる
+
+display:flex;   指定したい要素の親要素に指定。子要素を横並びにする。
+
+visibility: hidden;  「隠す」。要素を非表示にしますが、その要素が持っている位置や幅、高さなどの構造は維持されます。要素が透明になっているような状態になる。後に続く要素があった場合空白スペースがそのまま残る。display:noneと異なり、兄弟要素や子要素でvisibility:visibleを指定してやると、指定した部分を表示することが出来ます。
+visibility: visible;  要素を表示の状態にします。(初期値)
+
+要素をどのように配置するかの基準の指定
+position: absolute;  絶対配置。ブラウザ(body)が基準位置
+position: relative;  相対配置。position:absoluteとセットで使用。
+position: fixed;  絶対配置して固定（スクロールしても動かない）。主に固定ヘッダーで使う。
+  要素をどのように配置する位置の指定
+  top:0;  上からの位置
+  bottom:0;  下からの位置
+  left:20px;  左からの位置
+  right:20px;  右からの位置
+position:static;  デフォルト。明示的に指定するケースは少ない。
+position:relativeの要素の中にposition:absoluteの要素を配置した場合、abulosute要素の位置が親要素であるrelative要素から計算した位置に表示されます。
+
+要素の重ね順の指定
+z-indexはpositionのabsolute / relative / fixedのプロパティを使用すると使用可能。
+z-index:-10;
+z-index:10;
+数字の数が大きいほど重ねが上。
+
+要素内に収まらないときの指定
+widthやheightで幅を指定しているボックスの中の要素がはみ出てしまう時の表示の仕方
+overflow:visible;  はみ出したまま表示（デフォルト）
+overflow:hidden;  はみ出た部分を非表示
+overflow:scroll;  スクロールバーを表示
+
+ボックスに影を付ける
+box-shadow
+box-shadow: 右方向の影までの距離 下方向の影までの距離 色 影のぼかし 影の広がり insetキーワード ;
+box-shadow: 横オフセット 縦オフセット 色 （他省略可） ;
+box-shadow: 20px 10px 10px -5px #8D9EB8 inset;
+負の値を指定すると逆の方向に。
+影のぼかし（ブラー）は負の値を指定することはできません。値が大きいほど影の端のぼかしが強くなります。
+影の広がり（スプレッド）：負の値を指定すると、影を小さく（狭く）することができます。
+標準では、ボックスの外側に影をつけますが、値の末尾に「inset」というキーワードを指定するとボックスの内側に影をつけることができます。
+また、影の設定をカンマで区切って指定すると指定順に複数の影を重ねて表示することができます。
+
+-webkit-box-shadow: 1px 1px 5px 0px #000;
+Safari 5では、まだ未対応なのでwebkitのベンダーサフィックスが必要
+cf.影を利用してボックスにグロー（光彩）効果をつける
+グロー効果をつけるには、横と縦のオフセットを「0px」に指定し、ブラーやスプレッドの値を指定します。
+box-shadow: 0px 0px 15px #3741F7;
+
+要素の傾き
+transform:rotate(5deg);   指定した角度（deg）で2D回転を指定
+-webkit-transform: rotate(5deg);
+-o-transform: rotate(5deg);
+Opera / Chrome / Safariでは、まだ未対応なのでOpera用とwebkitのベンダーサフィックスが必要
+deg：円周を360分とした角度を表す単位。正の値の場合、時計回りで回転し、負の値の場合は反時計回りに回転
+
+縦位置を指定
+vertical：「垂直の」「縦の」といった意味
+align：「整列させる」といった意味
+vertical-align: top;  上付き
+vertical-align: middle;  縦中央
+vertical-align: bottom;  下付き
+使用できるのは、このインライン要素とテーブルセル<td><th>です。ブロック要素では、正しく表示されません。
+セットでよく使うのが、display: inline-block;
+親要素に対しての上下中央ではなく、同じ階層にあるインライン要素同士の縦の関係を指定するもの
+ただし、display: table-cellでは、中の要素の位置を指定する
+ボックスの中での上下中央を揃えたいなら、display: flex;を使う
+画像（img）やinline-blockの箇所で高さが合わない場合は、vertical-align:topかbottomをセットで使う。
+position: absolute;やposition: fixed;、floatなどで浮いている要素では、vertical-alignは効きません。table-cellを加えて一緒に使ってもダメ
+*/
+
+/* ■Flexbox（フレキシブルボックス） */
+/*
+概要
+CSS3から導入されたレイアウト技法（レイアウトモジュール）「フレキシブルボックス」。複数の子要素を揃えてレイアウトする仕組み。柔軟な横並び・均等な高さを実現できる。簡潔なコードで細かい所を自動で調整してくれ、簡単。レスポンシブレイアウトに強く、CSS Grid Layoutと並んで使われる頻度が高い。
+親要素のCSSを設定するだけで子要素が簡単に揃ってくれる。bootstrapの場合、揃えたい子要素全てにclass="col-xx-yy"を書く必要があるのに対して、flexboxの場合は必要な最小コードはたった一行、揃えたい子要素の親要素に加えるだけ。
+簡単にFlexboxを導入したい場合は、Flexy（超軽量シンプル）やFlexit（細かなカスタマイズや調整向け）などのFlexbox特化型のCSSフレームワークを使うと気軽に使用することができます
+
+Flexboxを使用する場合には、HTMLファイルにまず親要素となるコンテナ（f-container）を作成し、その中に子要素となるアイテム（f-item）を作り、親要素（コンテナ）にdisplay:flexを指定。
+以下の汎用クラス（単一プロパティで定義されたCSS）をCSSに入れて、別クラスにオプション設定を入れていくとHTML上でもわかりやすい（以降親要素には既に下記クラスがかかっているものとする）。
+.flex_container {display: flex;}
+
+５大網羅パターン
+１、（最頻出）両端揃えで横並べ。両端は端っこにピッタリくっつけて間は等間隔に配置（最初の子要素を左端に配置、最後の子要素を右端に配置、間の要素は等間隔に配置）。横並びのベースとして、ここから上書きしていくことが多い。
+
+.items {
+  justify-content: space-between;  両端は端っこにピッタリくっつけて間は等間隔
+}
+.items .item {
+  width: 30%;
+}
+
+２、画面の大きさに応じて横並びから縦並びに変更
+並びの向きを指定。レスポンシブデザイン時によく使う。
+PCサイトからスマホサイトへ変換させるときに　row（デフォルト）とcolumnを使い分ける。
+cf.Flexboxで制作したWEBサイトをレスポンシブ化するためには、メディアクエリで「display: flex;」にしていたところを「display: block;」にすることで縦並びに変化します。
+
+@media screen and (max-width: 767px) {
+  .items2 {
+    flex-direction: column;  縦並び
+  }
+  .items2 .item {
+    width: 100%;
+  }
+}
+
+２a、順番を入れ替える
+逆向き指定。奇数だけ逆向き指定をして、互い違いのレイアウトを作るのによく使う。
+
+.items2a .item {
+  margin: 0 0 20px;
+}
+.items2a .item:nth-child(odd) {
+  flex-direction: row-reverse;  右から
+  flex-direction: column-reverse;  下から
+}
+
+３、折返し
+Flexboxはデフォルトでは改行されません。display: table-cellみたいなイメージ。flex-wrap: wrap;を指定しないと、子要素の幅の指定関係なく幅を調整して無理やり1列で収めようとする。
+改行させたい場合はflex-wrap: wrap;を追加する必要があります。
+
+.items3 {
+  flex-wrap: wrap;  折返し
+  justify-content: space-between;
+}
+
+.items3 .item {
+  width: 30%;
+}
+
+（以降親要素（コンテナ、f-container）に使用するプロパティの紹介）
+４、垂直方向中央揃え（上下中央揃え）  align-items: center;
+ヘッダーでよく使う。高さが指定してある要素にdisplay: flex;を指定して、align-items: center;にする。
+
+他
+上付き  align-items: flex-start;
+
+下付き  align-items: flex-end;
+
+左揃えで横並べ（デフォルト値）
+
+中央揃えで横並べ  justify-content: center;
+
+右揃えで横並べ  justify-content: flex-end;
+
+最後の要素だけ右揃えで、それ以外は左揃えで横並べ（右サイドメニュー）
+.flex-container >:last-child {
+  margin-left: auto;
+}
+
+最初の要素だけ左揃えで、それ以外は右揃えで横並べ（左サイドメニュー）
+.items {
+  justify-content: flex-end;
+}
+.flex-container >:first-child {
+  margin-right: auto;
+}
+
+子要素の順番を変えたいときは、子要素に「order: 順番（1～）;」を記述する
+すべてのアイテムに対して垂直方向の位置を指定する場合はFlexコンテナにalign-itemsを、個々のアイテム毎に垂直方向の位置を指定する場合はFlexアイテムにalign-selfプロパティを指定して設定する
+
+注意点
+垂直方向の位置を指定するvertical-alignは、Flexboxでは使用することができません。
+
+2019年1月現在では、主要なブラウザはすでにFlexboxに対応しており、基本的にベンダープレフィックスを付けなくても正常に動作させる事が可能です。しかし、一部の古いバージョンのブラウザでは正しく表示されないため、それらのブラウザを推奨環境に含める場合はベンダープレフィックスが必要となる。
+古いブラウザというのは、特にバージョン10以前のIE（インターネットエクスプローラー）とAndroid2.1〜4.3のブラウザを指しています。ただし、そもそもFlexboxに対応していないIEとAndroidブラウザのシェアは足しても1％以下。古いIEに対応しなければならない場合は、inline-blockあたりを使用するのがいい
+ベンダープレフィックスを付けるのが面倒だという方は、AutoPrefixerを使えば簡単。
+AutoPrefixerの導入が面倒だという方は、「Prepros」というSassのGUIコンパイラを導入することで簡単に利用することができます。.scssファイルからの変換はもちろん、.cssファイルからベンダープレフィックスを追加したファイルを出力することもで可能です。
+
+Flexboxが学べるサイト
+Flexbox Froggy - CSS flexbox学習ゲーム：  https://flexboxfroggy.com/#ja
+
+*/
+
+/* ■テーブル・リスト・カーソル */
+/*
+テーブル：枠線の表示方法
+border-collapse: collapse;
+border-collapse: separate;
+テーブルのHTMLはデフォルトでは枠線が定義されていません
+
+リスト：行頭記号の指定
+ul / olに付けることで、liで表示されるリストの行頭部分を変更
+list-style-type:disc;  黒丸
+list-style-type:circle;  白丸
+list-style-type:square;  四角
+list-style-type:decimal;  数字
+
+リスト：行頭の記号を画像指定
+list-style-image:url(images/list-bg.png);  リストの行頭に画像を使用
+画像の大きさによっては上手くレイアウトされないことがあるので、padding-leftなどを使用してバランスを調整します。
+
+要素ごとに自由にマウスカーソルの形状を指定
+cursor: default;  普通の矢印。
+cursor: pointer;  指差しの手。主にリンクで使われる。
+cursor: text;  テキストカーソル。Iビーム
+cursor: none;  カーソルが非表示
+cursor: move;  十字の矢印。移動させられる物を示す
+cursor: not-allowed;  禁止マーク。操作できないことを表す
+cursor: wait;  ぐるぐる or 砂時計。処理中で操作ができないことを表す
+cursor: help;  （Windowsだと矢印カーソルと一緒に）クエスチョンマーク
+cursor: url("cursor.svg"), url("cursor.gif"), pointer;  指定画像
+IEは*.curないし*.aniという専用の種類のファイルである必要がある
+参考：https://saruwakakun.com/html-css/basic/cursor
+*/
+
+/* ■変化 */
+/*
+transition
+*/
+
+/* ■使えるツール・サイト */
+/*
+ブラウザの対応状況は Can I Use でチェック。「ベンダプレフィックスが必要」とか、「このブラウザはこの値には未対応」とか。
+https://caniuse.com/
+
+世界でよく使われるプロパティ。プロパティのシェア。Bingのクローラーが収集した情報を使ってる
+https://developer.microsoft.com/en-us/microsoft-edge/platform/usage/
+
+「An HTML lint文法チェック」で非推奨タグのチェックができる
+*/
+
+/* ■標準コーディングルール */
+/*
+CSSでは基本的にセレクタに要素は用いず、classを用いたセレクタのみ利用します。
+  ページ数が増えるほど重複が出ててきやすいため。
+  CSSの再利用性が低下するため。
+CSSプロパティは上からアルファベット順で記述します。
+HTMLタグとCSSのインデントは半角スペース2とし、タブは使用しません。
+色の16進トリプレット表記は出来るだけ3桁表記に。#33bb00　→　#3b0
+セレクタのネストは孫までにします。親 > 子 > 孫
+BEMのルールで命名をする
+なるべくベンダープレフィックスは記述しない
+単行コメントを使う。CSSのデフォルトコメントは入れ子にすることができないため。
+JavaScript から ID を利用する場合は、ブロック名の前に js- をつけます。
+スクリプトとデザインで使用されているクラスを明確に分けるため、js- がついたクラスは CSS のファイルには記述せず、デザインのスタイルをあてないようにします。
+再利用性がないため、IDにスタイルをあてない
+基本的にはインラインスタイルは使わない
+!important は基本的に使用しない
+フレームワークのクラスを汎用クラスとして利用し、自作の汎用クラス（単一プロパティで定義されたCSS）は基本的には使用しません。
+CSSは目視でチェックせずチェックツールを使用する
+  http://csslint.net/
+*/
