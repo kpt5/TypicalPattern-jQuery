@@ -173,12 +173,6 @@ $(function () {
     return false;
   });
 
-  //  アコーディオンメニュー   △
-  $("#acMenu dt").on("click", function () {
-    $(this).next().slideToggle();
-    $(this).toggleClass("active"); //追加部分
-  });
-
   //  タブメニュー
   $("#tabMenu li a").on("click", function () {
     $("#tabBoxes div").hide();
@@ -188,52 +182,6 @@ $(function () {
   });
   return false;
 
-
-  //  セレクトボックスで表示を切り替える   不可
-  //  セレクトボックスの値変更時に着火
-  $('.select').on('change', function () {
-    // セレクトボックスの値を取得(例：北海道)
-    var area = $(this).children(':selected').text();
-
-    $('.area').each(function () {
-      // 全て非表示にする(初期化)
-      $(this).addClass('hide');
-
-      // '全て'が選択されていれば
-      if (area == '全て') {
-        // 表示する
-        $(this).removeClass('hide');
-
-        // テキスト(例：北海道)が一致していれば
-      } else if ($(this).html().match(area)) {
-        // 表示する
-        $(this).removeClass('hide');
-      }
-    });
-  });
-
-  //  セレクトボックスで表示を切り替える・改   不可
-  //  セレクトボックスの値変更時に着火
-  $('.select2').on('change', function () {
-    // セレクトボックスの値を取得(例：北海道)
-    var area2 = $(this).children(':selected').text();
-
-    $('.area2').each(function () {
-      // 全て非表示にする(初期化)
-      $(this).addClass('hide');
-
-      // '全て'が選択されていれば
-      if (area2 == '全て') {
-        // 表示する
-        $(this).removeClass('hide');
-
-        // テキスト(例：北海道)が一致していれば
-      } else if ($(this).text().match(area)) {
-        // 表示する
-        $(this).removeClass('hide');
-      }
-    });
-  });
 
   //  「トップへ戻る」ボタン（スクロールしたら右下に浮き上がって配置される）   不可
   jQuery(window).on("scroll", function ($) {

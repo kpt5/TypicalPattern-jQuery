@@ -104,55 +104,6 @@ ul {
   opacity: 1;
 }
 
-/* アコーディオンメニュー */
-#acMenu dt {
-  display: inline-block;
-  width: 22rem;
-  height: 50px;
-  line-height: 50px;
-  border: #666 1px solid;
-  text-align: center;
-  cursor: pointer;
-}
-
-#acMenu dd {
-  display: none;
-  width: 27rem;
-  height: 50px;
-  line-height: 50px;
-  border: #666 1px solid;
-  text-align: center;
-  background: #f2f2f2;
-}
-
-/* アコーディオンメニュー2 */
-#acMenu_2 dt {
-  display: block;
-  width: 185px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border: #666 1px solid;
-  cursor: pointer;
-  background: url(images/i_swich.png) 177px -69px no-repeat;
-  padding-right: 15px;
-}
-
-#acMenu_2 dd {
-  background: #f2f2f2;
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border: #666 1px solid;
-  display: none;
-}
-
-#acMenu_2 dt.active {
-  background: url(images/i_swich.png) 177px 18px no-repeat;
-}
-
-
 /* モーダル */
 /* モーダルの背景 */
 .login_modal_wrapper {

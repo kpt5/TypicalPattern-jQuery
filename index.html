@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>jQuery練習・実験</title>
+  <title>jQueryの典型パターン集</title>
 
   <!-- Bootstrap -->
   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
@@ -58,36 +58,7 @@
       <div class="index_btn">5</div>
     </div>
   </div>
-  <!-- アコーディオンメニュー -->
-  <header>
-    <div>
-      <dl id="acMenu">
-        <dt>アコーディオンメニュー1</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dt>アコーディオンメニュー2</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dt>アコーディオンメニュー3</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-      </dl>
-    </div>
-    <div>
-      <dl id="acMenu_2">
-        <dt>アコーディオンメニュー1</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dt>アコーディオンメニュー2</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dt>アコーディオンメニュー3</dt>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-        <dd>アコーディオンメニューが開く。</dd>
-      </dl>
-    </div>
 
-  </header>
   <!-- モーダル：clickイベントなどに基づいて、表示/非表示が行われる要素 -->
   <!-- ①モーダルをCSSで非表示にする -->
   <!-- ②ログインボタンにclickイベントを設定 -->
@@ -251,50 +222,7 @@
         <div id="tabBox3">タブボックス3</div>
       </div>
     </div>
-    <!-- セレクトボックスで表示を切り替える -->
-    <div>
-      <!-- 表示・非表示が切り替える要素 -->
-      <ul>
-        <li class="area">北海道</li>
-        <li class="area">東京</li>
-        <li class="area">大阪</li>
-        <li class="area">兵庫</li>
-        <li class="area">京都</li>
-      </ul>
 
-      <!-- 絞り込むためのトリガー -->
-      <select class="select">
-        <option>全て</option>
-        <option>北海道</option>
-        <option>東京</option>
-        <option>大阪</option>
-        <option>兵庫</option>
-        <option>京都</option>
-      </select>
-    </div>
-    <!-- セレクトボックスで表示を切り替える・改 -->
-    <div>
-      <!-- 表示・非表示が切り替える要素 -->
-      <ul>
-        <li class="area2">北海道</li>
-        <li class="area2">東京</li>
-        <li class="area2">大阪</li>
-        <li class="area2">兵庫</li>
-        <li class="area2">京都</li>
-      </ul>
-
-      <!-- 絞り込むためのトリガー -->
-      <select class="select2">
-        <option>全て</option>
-        <option>北海道</option>
-        <option>東京</option>
-        <option>大阪</option>
-        <option>兵庫</option>
-        <option>京都</option>
-      </select>
-    </div>
-
-    <div></div>
     <!-- 切り替え機能付きスライド -->
     <!-- 
 「.slide」要素は「display: none;」を用いて一旦すべて表示されないようにし、activeクラスがついた「.slide」要素だけが表示されるようにします。
